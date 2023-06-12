@@ -83,3 +83,30 @@
   746  docker images
   747  docker run -d --name test-apache-v3 -p 8081:80 my-apache-app:v2
   748  docker ps
+
+
+
+639  cd v3/
+  640  ls
+  641  docker images 
+  642  docker build -t my-apache-app:v3 .
+  643  ls
+  644  docker build -t my-apache-app:v3 -f MyDockerfile . 
+  645  docker images 
+  646  docker run -d my-apache-app:v3 
+  647  docker ps 
+  648  docker run -d -P  my-apache-app:v3 
+  649  docker ps 
+  650  ls
+  651  cd ..
+  652  ls
+  653  cp -rf v3 v4 
+  654  ls
+  655  cd v4/
+  656  ls
+  657  vim MyDockerfile 
+  658  ls
+  659  docker build -t my-apache-app:v4 -f MyDockerfile . 
+  660  docker images 
+  661  docker run -d -P  my-apache-app:v4 
+  662  docker ps 
