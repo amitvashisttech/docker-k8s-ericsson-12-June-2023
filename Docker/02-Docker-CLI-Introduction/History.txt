@@ -21,3 +21,24 @@
   642  docker start test-ubuntu-1
   643  docker ps -a
   644  docker attach 6d65981b8444
+
+## Clean Up
+
+  664  docker ps -a
+  665  docker kill  cbdf8ce17d77
+  666  docker ps -a
+  667  docker rm test-ubuntu-3
+  668  docker ps -a
+  669  docker ps -a
+  670  docker ps -aq
+  671  docker rm $(docker ps -aq)
+  672  docker ps -a
+  673  docker images
+  674  docker rmi 9c7a54a9a43c
+  675  docker run -d ubuntu
+  676  docker ps
+  677  docker ps -a
+  678  docker rmi 1f6ddc1b2547
+  679  docker rm $(docker ps -aq)
+  680  docker rmi 1f6ddc1b2547
+  681  docker images

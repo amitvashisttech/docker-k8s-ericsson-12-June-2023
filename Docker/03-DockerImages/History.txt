@@ -1,0 +1,85 @@
+  664  docker ps -a
+  665  docker kill  cbdf8ce17d77
+  666  docker ps -a
+  667  docker rm test-ubuntu-3
+  668  docker ps -a
+  669  docker ps -a
+  670  docker ps -aq
+  671  docker rm $(docker ps -aq)
+  672  docker ps -a
+  673  docker images
+  674  docker rmi 9c7a54a9a43c
+  675  docker run -d ubuntu
+  676  docker ps
+  677  docker ps -a
+  678  docker rmi 1f6ddc1b2547
+  679  docker rm $(docker ps -aq)
+  680  docker rmi 1f6ddc1b2547
+  681  docker images
+  682  history
+  683  ls
+  684  history
+  685  vim History.txt
+  686  ls
+  687  docker run -it --name test-apache-1 bash
+  688  docker run -it --name test-apache-1 ubuntu bash
+  689  docker ps
+  690  ifconfig
+  691  netstat
+  692  docker images
+  693  docker ps
+  694  ip addr
+  695  docker ps
+  696  docker inspect 22fcc69b309b
+  697  ip addr
+  698  ping 172.17.0.2
+  699  route -n
+  700  docker ps
+  701  ping 172.17.0.2
+  702  curl 172.17.0.2
+  703  docker images
+  704  docker ps
+  705  ls
+  706  history
+  707  ls
+  708  cd ..
+  709  ls
+  710  mkdir 03-DockerImages
+  711  ls
+  712  cd 03-DockerImages/
+  713  ls
+  714  mkdir apache/v1 -p
+  715  ls
+  716  docker ps
+  717  docker attach 22fcc69b309b
+  718  ls
+  719  cd apache/
+  720  ls
+  721  cd v1/
+  722  ls
+  723  cat Dockerfile
+  724  docker build -t my-apache-app:v1 .
+  725  docker images
+  726  docker run -d --name test-apache-v1 my-apache-app:v1
+  727  docker ps
+  728  docker inspect  test-apache-v1
+  729  curl 172.17.0.4
+  730  docker images
+  731  docker run -d --name test-apache-v2 -p 8080:80 my-apache-app:v1
+  732  docker ps
+  733  systemctl status docker
+  734  docker ps
+  735  docker inspect test-apache-v2
+  736  ls
+  737  cd ..
+  738  ls
+  739  cp -rf v1 v2
+  740  ls
+  741  cd v2/
+  742  ls
+  743  docker ps
+  744  ls
+  745  docker build -t my-apache-app:v2 .
+  746  docker images
+  747  docker run -d --name test-apache-v3 -p 8081:80 my-apache-app:v2
+  748  docker ps
