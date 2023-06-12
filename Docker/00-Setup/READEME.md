@@ -26,7 +26,7 @@ sudo su -
 
 ### Step7 : Clone the git project repo 
 ```
-git clone 
+git clone https://github.com/amitvashisttech/docker-k8s-ericsson-12-June-2023.git
 ```
 
 ## Extra Vagrant Command  :
