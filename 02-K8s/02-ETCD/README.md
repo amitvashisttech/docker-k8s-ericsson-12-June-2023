@@ -13,7 +13,9 @@ kubectl exec -it etcd-kmaster -n kube-system   -- /bin/sh
 ## Check the ETCD Status
 ```  
 # ETCDCTL_API=3 etcdctl --cacert="/etc/kubernetes/pki/etcd/ca.crt"  --cert="/etc/kubernetes/pki/etcd/server.crt" --key="/etc/kubernetes/pki/etcd/server.key" endpoint status  --write-out=table
+```
 
+```
 +----------------+------------------+---------+---------+-----------+------------+-----------+------------+--------------------+--------+
 |    ENDPOINT    |        ID        | VERSION | DB SIZE | IS LEADER | IS LEARNER | RAFT TERM | RAFT INDEX | RAFT APPLIED INDEX | ERRORS |
 +----------------+------------------+---------+---------+-----------+------------+-----------+------------+--------------------+--------+
