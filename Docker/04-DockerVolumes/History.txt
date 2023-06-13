@@ -1,0 +1,52 @@
+599  docker ps
+  600  docker kill $(docker ps -qa)
+  601  docker rm $(docker ps -qa)
+  602  ls
+  603  docker ps
+  604  docker ps -a
+  605  docker run -it --name test-1 ubuntu bash
+  606  ls
+  607  docker run -it --name test-2 ubuntu bash
+  608  docker ps
+  609  docker ps -a
+  610  docker start test-1
+  611  docker ps
+  612  docker attach test-1
+  613  ls
+  614  docker ps
+  615  docker kill $(docker ps -qa)
+  616  docker rm $(docker ps -qa)
+  617  docker ps
+  618  docker volume ls
+  619  docker create volume my-vol
+  620  docker  volume  create my-vol
+  621  docker volume ls
+  622  docker inspect volume my-vol
+  623  ls
+  624  docker run -it --name volume-test-1 -v my-vol:/app ubuntu
+  625  docker ps
+  626  docker run -it --name volume-test-2 -v my-vol:/app ubuntu
+  627  ls
+  628  docker run -it --name volume-test-3 -v my-vol:/app:ro ubuntu
+  629  ls
+  630  docker ps
+  631  docker kill $(docker ps -qa)
+  632  docker rm $(docker ps -qa)
+  633  docker ps -a
+  634  docker volume ls
+  635  docker run -it --name volume-test-4 -v my-vol:/app ubuntu
+  636  docker ps
+  637  docker inspect volume-test-4
+  638  docker run -it --name volume-test-5 -v my-vol:/myapp:ro ubuntu
+  639  docker ps
+  640  docker inspect volume-test-5
+  641  ls
+  642  docker ps -a
+  643  docker rm $(docker ps -qa)
+  644  ls
+  645  docker volume ls
+  646  docker volume rm my-vol
+  647  docker ps -a
+  648  docker kill $(docker ps -qa)
+  649  docker rm $(docker ps -qa)
+  650  docker volume rm my-vol
