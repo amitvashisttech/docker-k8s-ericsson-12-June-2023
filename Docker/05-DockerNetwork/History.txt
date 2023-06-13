@@ -1,0 +1,88 @@
+  666  docker network ls
+  667  docker network inspect bridge
+  668  docker run -itd --name test-network-1 ubuntu
+  669  docker ps
+  670  docker network inspect bridge
+  671  docker run -itd --name test-network-2 ubuntu
+  672  docker network inspect bridge
+  673  docker run -itd --name test-network-3 ubuntu
+  674  docker run -itd --name test-network-4 ubuntu
+  675  docker network inspect bridge
+  676  docker kill test-network-2
+  677  docker network inspect bridge
+  678  docker run -itd --name test-network-5 ubuntu
+  679  docker network inspect bridge
+  680  docker start test-network-2
+  681  docker network inspect bridge
+  682  ls
+  683  docker ps
+  684  docker kill $(docker ps -qa)
+  685  docker rm $(docker ps -qa)
+  686  docker run -it --name test-network-1 ubuntu
+  687  docker images
+  688  docker ps
+  689  docker commit --help
+  690  docker commit -p -m "My Network Image" test-network-1 my-network-app:v1
+  691  docker images
+  692  docker run -d my-network-app:v1
+  693  docker ps
+  694  docker ps -a
+  695  docker run -itd --name network-1 my-network-app:v1
+  696  docker ps
+  697  docker attach network-1
+  698  ls
+  699  docker ps
+  700  docker exec -it network-1 ifconfig
+  701  ip addr
+  702  docker ps -a
+  703  docker images
+  704  ls
+  705  docker network  ls
+  706  docker kill $(docker ps -qa)
+  707  ls
+  708  docker ps -a
+  709  docker rm $(docker ps -qa)
+  710  docker ps -a
+  711  docker run -itd --name network-1 my-network-app:v1
+  712  docker ps
+  713  docker network ls
+  714  docker run -itd --name network-host-1 --network host  my-network-app:v1
+  715  docker run -itd --name network-none-1 --network none  my-network-app:v1
+  716  docker ps
+  717  docker exec -it network-1 ifconfig
+  718  docker exec -it network-host-1 ifconfig
+  719  docker ps
+  720  docker exec -it network-none-1 ifconfig
+  721  docker network ls
+  722  docker network create --help
+  723  docker network create --driver "bridge" --subnet=172.28.0.0/16  --ip-range=172.28.5.1/24 --gateway=172.28.5.254 mybr0
+  724  docker network ls
+  725  docker network inspect mybr0
+  726  docker run -itd --name network-mybr0-1 --network mybr0  my-network-app:v1
+  727  docker ps
+  728  docker exec -it network-mybr0-1  ifconfig
+  729  docker exec -it network-mybr0-1  route -n
+  730  docker run -itd --name network-mybr0-2 --network mybr0  my-network-app:v1
+  731  docker run -itd --name network-mybr0-3 --network mybr0  my-network-app:v1
+  732  docker exec -it network-mybr0-1  ifconfig
+  733  docker exec -it network-mybr0-2  ifconfig
+  734  docker exec -it network-mybr0-3  ifconfig
+  735  docker exec -it network-mybr0-3  route -n
+  736  docker exec -it network-mybr0-3  ping -c2 google.com
+  737  docker exec -it network-mybr0-3  ping -c2 172.28.5.0
+  738  docker exec -it network-mybr0-3  ping -c2 172.28.5.1
+  739  docker exec -it network-mybr0-3  ping -c2 172.28.5.2
+  740  docker exec -it network-mybr0-3  ping -c2 172.28.5.254
+  741  docker images
+  742  docker run -d --name network-mybr0-4 --network mybr0 -P my-apache-app:v4
+  743  docker ps
+  744  ls
+  745  docker run -d --name network-mybr0-5 --network mybr0 -P -v /root/docker-k8s-ericsson-12-June-2023/Docker:/var/www/html/myapp:ro my-apache-app:v4
+  746  docker ps
+  747  docker inspect 821143560b38
+  748  ls
+  749  docker ps
+  750  docker kill $(docker ps -qa)
+  751  docker rm $(docker ps -qa)
+  752  docker network ls
+  753  docker network rm c9752468b40a
