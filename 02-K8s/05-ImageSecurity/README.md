@@ -2,7 +2,7 @@
 
 ## Create Hello-K8s Pod Deployment File
 ```
- kubectl run hello-k8s --image=nginx --port=80 -o yaml --dry-run > hello -k8s.yaml
+ kubectl run hello-k8s --image=nginx --port=80 -o yaml --dry-run > hello-k8s.yaml
 ```
 
 ## Configure Docker Image Pull Secrets
