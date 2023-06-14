@@ -4418,6 +4418,8 @@ spec:
       labels:
         k8s-app: calico-node
     spec:
+      imagePullSecrets:
+      - name: regcred
       nodeSelector:
         kubernetes.io/os: linux
       hostNetwork: true
