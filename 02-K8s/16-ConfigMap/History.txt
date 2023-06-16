@@ -1,10 +1,4 @@
-   83  mkdir 13-ConfigMap
-   84  ls
-   85  cd 13-ConfigMap/
-   86  ls
-   87  vim nginx-pod.yml
-   88  ls
-   89  vim nginx-service.yaml
+
    90  vim reverseproxy.conf
    91  kubectl get configmap
    92  kubectl create configmap nginx-config --from-file=reverseproxy.conf -o yaml --dry-run
