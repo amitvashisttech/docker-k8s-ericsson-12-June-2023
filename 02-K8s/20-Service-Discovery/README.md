@@ -33,3 +33,77 @@
   709  kubectl exec -it helloworld-deployment-7c557cd984-74jpl -- env
 
 ```
+
+
+## MySQL DB Commands 
+```
+kubectl exec -it database -- mysql -u root -p
+```
+```
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.7.42 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql>
+```
+
+### Check the Databases
+```
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| helloworld         |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.04 sec)
+```
+
+### Switch the Database to helloworld:
+```
+mysql> use helloworld;
+Database changed
+```
+
+### Check the table space in helloworld DB:
+```
+mysql> show tables;
+Empty set (0.00 sec)
+```
+
+
+### After hello application is deployed, check the table & visit count:
+```
+mysql> show tables;
++----------------------+
+| Tables_in_helloworld |
++----------------------+
+| visits               |
++----------------------+
+1 row in set (0.01 sec)
+```
+
+```
+mysql> select * from visits;
++----+---------------+
+| id | ts            |
++----+---------------+
+|  1 | 1686909084758 |
++----+---------------+
+1 row in set (0.27 sec)
+```
+
+```
+exit
+```
